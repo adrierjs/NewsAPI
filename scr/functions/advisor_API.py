@@ -1,4 +1,6 @@
 import requests
+
+
 def fetch_city_id(params):
     url_city_id = 'http://apiadvisor.climatempo.com.br/api/v1/locale/city?name=&state=&token='
     response = requests.get(url_city_id, params=params)
@@ -15,4 +17,4 @@ def meteorological_data(city_id, paramts):
     if response.ok:
         return response.json()
     else:
-        return f'Erro na requisição! {response.status_code}'
+        return Exception(requests.status_codes)
