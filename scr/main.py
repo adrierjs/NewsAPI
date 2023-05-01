@@ -1,5 +1,5 @@
 import os
-from scr.functions import advisor_API
+from scr.functions import advisor_API, convert_data
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -21,4 +21,7 @@ for i in range(len(data)):
     id = data[i]['id']
     list_city.append(advisor_API.meteorological_data(id, paramts))
 
-formatted_data = advisor_API.format_data(list_city)
+data_json = {}
+data_json = convert_data.format_data(list_city)
+
+
