@@ -10,14 +10,15 @@ paramts_city_id = {
     "state": "RN",
     "token": TOKEN
 }
-
-data = advisor_API.fetch_city_id(paramts_city_id)
-
-for i in range(len(data)):
-    id = data[i]['id']
-
 paramts = {
     "token": TOKEN
 }
 
-print(advisor_API.meteorological_data(id, paramts))
+data = advisor_API.fetch_city_id(paramts_city_id)
+
+list_city = []
+for i in range(len(data)):
+    id = data[i]['id']
+    list_city.append(advisor_API.meteorological_data(id, paramts))
+
+formatted_data = advisor_API.format_data(list_city)
