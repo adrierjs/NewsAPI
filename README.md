@@ -14,5 +14,5 @@
 #### Execução
 Para instalar todas as dependências, verifique se você tem o pip (`pip --version`) instalado em sua máquina. Se sim, só executar na pasta raiz do projeto `pip install -r requirements.txt`
  
-
-<footer> Desenvolvido por Adrier José</footer>
+<br>
+<center> Desenvolvido por <strong>Adrier José</strong></center>
