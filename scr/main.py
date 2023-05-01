@@ -1,4 +1,6 @@
 import requests
+import os
+from dotenv import load_dotenv
 
 def fetch_city_id(params):
     url_city_id = 'http://apiadvisor.climatempo.com.br/api/v1/locale/city?name=&state=&token='
@@ -18,18 +20,24 @@ def meteorological_data(city_id, paramts):
     else:
         return f'Erro na requisição! {response.status_code}'
 
+load_dotenv()
+TOKEN = os.getenv('TOKEN')
 
-token = '7249ce0d0a68599c5bba3aebe54d99a1'
+
+
 paramts_city_id = {
     "name": "Jardim do Seridó",
     "state": "RN",
-    "token": token
+    "token": TOKEN
 }
 
 data = fetch_city_id(paramts_city_id)
 
 id = data[0]['id']
 paramts = {
-    "token":token
+    "token":TOKEN
 }
-print(meteorological_data(id, paramts))
+
+print(meteorological_data(id,paramts))
+
+
