@@ -13,9 +13,12 @@ query = f"INSERT INTO dados_clima (id, id_cidade, nome, estado, pais, temperatur
         f"'{main.data_json['condicao']}', {main.data_json['sensacao_termica']}, '{main.data_json['dia']}');"
 session.execute(query)
 
-# query = 'SELECT * FROM dados_clima'
-# dados = (session.execute(query))
-# for i in dados:
-#         print(i)
-#
+list_data = []
+query = 'SELECT * FROM dados_clima '
+dados = (session.execute(query))
+for i in dados:
+        (list_data.append(i))
 
+linhas_ordenadas = sorted(list_data, key=lambda linha: linha.dia)
+for linha in linhas_ordenadas:
+    print(linha)
