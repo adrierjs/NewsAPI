@@ -4,10 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
-
 paramts_city_id = {
-    "name": "Jardim do Seridó",
-    "state": "RN",
+    "name": "Patos",
+    "state": "PB",
     "token": TOKEN
 }
 paramts = {
