@@ -7,7 +7,7 @@ import os
 load_dotenv()
 PASSWORD = os.getenv('PASSWORD')
 # Configuração da conta de e-mail
-sender_email = 'adrierj+dadosclimaticos@gmail.com'
+sender_email = 'dadosclimaticos.uepb@gmail.com'
 sender_password = PASSWORD
 
 # Configuração do destinatário e mensagem
