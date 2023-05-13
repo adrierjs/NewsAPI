@@ -23,4 +23,5 @@ for i in range(len(data)):
 data_json = {}
 data_json = convert_data.format_data(list_city)
 
+print(data_json)
 
