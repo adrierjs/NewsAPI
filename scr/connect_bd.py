@@ -1,6 +1,7 @@
 from cassandra.cluster import Cluster
 import main
 import uuid
+
 # Cria um objeto de cluster Cassandra e se conecta
 cluster = Cluster(['localhost'])
 session = cluster.connect('dados_climaticos')
@@ -17,8 +18,8 @@ list_data = []
 query = 'SELECT * FROM dados_clima '
 dados = (session.execute(query))
 for i in dados:
-        (list_data.append(i))
+        list_data.append(i)
 
 linhas_ordenadas = sorted(list_data, key=lambda linha: linha.dia)
-for linha in linhas_ordenadas:
-    print(linha)
+
+
