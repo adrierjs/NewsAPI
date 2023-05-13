@@ -2,7 +2,7 @@ import os
 from scr.functions import advisor_API, convert_data
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv() #Função para carregar as variáveis do arquivo .env
 TOKEN = os.getenv('TOKEN')
 paramts_city_id = {
     "name": "Patos",
