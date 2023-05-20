@@ -8,7 +8,7 @@ from scr.main import *
 def insert_data(current_weather_data):
     comando_sql = """
         INSERT INTO dados_clima_diarios (id_cidade, nome, estado, pais, temperatura, direcao_vento, velocidade_vento, humidade, condicao, pressao, sensacao_termica, data_atual)
-        VALUES ({id_cidade}, '{nome}', '{estado}', '{pais}', {temperatura}, '{direcao_vento}', {velocidade_vento}, {humidade}, '{condicao}', {pressao}, {sensacao_termica}, '{dia}')
+        VALUES ({id_cidade}, '{nome}', '{estado}', '{pais}', {temperatura}, '{direcao_vento}', {velocidade_vento}, {humidade}, '{condicao}', {pressao}, {sensacao_termica}, '{data_atual}')
     """.format(**current_weather_data)
     try:
         cursor.execute(comando_sql)
