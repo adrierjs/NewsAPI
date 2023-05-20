@@ -12,7 +12,7 @@ def format_data(list_city):
             "condicao": list_city[i]['data']['condition'],
             "pressao": list_city[i]['data']['pressure'],
             "sensacao_termica": list_city[i]['data']['sensation'],
-            "dia": list_city[i]['data']['date']
+            "data_atual": list_city[i]['data']['date']
         }
         return data_formating
 
