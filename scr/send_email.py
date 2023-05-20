@@ -11,7 +11,7 @@ sender_email = 'dadosclimaticos.uepb@gmail.com'
 sender_password = PASSWORD
 
 # Configuração do destinatário e mensagem
-emails = ['ludmila.lima']
+emails = ['adrier.santos']
 # recipient = 'adrier.santos@aluno.uepb.edu.br'
 
 
