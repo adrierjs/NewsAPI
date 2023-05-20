@@ -1,25 +1,23 @@
-from cassandra.cluster import Cluster
-import main
-import uuid
+import os
+import psycopg2
 
-# Cria um objeto de cluster Cassandra e se conecta
-cluster = Cluster(['localhost'])
-session = cluster.connect('dados_climaticos')
+MAINTENANCE_DATABASE = os.getenv('MAINTENANCE_DATABASE')
+USER_NAME = os.getenv('USER_NAME')
+PASSWORD_DATABASE = os.getenv('PASSWORD_DATABASE')
 
-id = uuid.uuid1()
-# Consulta os dados
-query = f"INSERT INTO dados_clima (id, id_cidade, nome, estado, pais, temperatura, humidade, condicao, sensacao_termica, dia) " \
-        f"VALUES ({id}, {main.data_json['id_cidade']}, '{main.data_json['nome']}', '{main.data_json['estado']}', " \
-        f"'{main.data_json['pais']}', {main.data_json['temperatura']}, {main.data_json['humidade']}, " \
-        f"'{main.data_json['condicao']}', {main.data_json['sensacao_termica']}, '{main.data_json['dia']}');"
-session.execute(query)
 
-list_data = []
-query = 'SELECT * FROM dados_clima '
-dados = (session.execute(query))
-for i in dados:
-        list_data.append(i)
-
-linhas_ordenadas = sorted(list_data, key=lambda linha: linha.dia)
+print(PASSWORD_DATABASE)
+try:
+    connection = psycopg2.connect(
+        host="silly.db.elephantsql.com",
+        port=5432,
+        database=MAINTENANCE_DATABASE,
+        user=USER_NAME,
+        password=PASSWORD_DATABASE
+    )
+    cursor = connection.cursor()
+    print("Conexão estabelecida com sucesso!")
+except (Exception, psycopg2.Error) as error:
+    print("Erro ao conectar ao PostgreSQL:", error)
 
 

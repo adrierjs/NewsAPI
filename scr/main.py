@@ -31,7 +31,7 @@ def chamar_API():
 # json_string = json.dumps(chamar_API(),ensure_ascii=False) #Colocar aspas duplas nos atributos do dicionario
 # print(json_string
 
-print(chamar_API())
+# print(chamar_API())
 
 
 
