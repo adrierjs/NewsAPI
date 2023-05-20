@@ -1,5 +1,5 @@
 import yagmail
-import main
+from scr.main import *
 from dotenv import load_dotenv
 import os
 
@@ -11,7 +11,7 @@ sender_email = 'dadosclimaticos.uepb@gmail.com'
 sender_password = PASSWORD
 
 # Configuração do destinatário e mensagem
-emails = ['ludmila.lima']
+emails = ['adrier.santos']
 # recipient = 'adrier.santos@aluno.uepb.edu.br'
 
 
@@ -19,7 +19,7 @@ emails = ['ludmila.lima']
 # Cria o objeto yagmail e envia o e-mail
 
 for i in range (len(emails)):
-    dados = main.chamar_API()
+    dados = chamar_API()
     body = f'{dados}'
     subject = f'Dados climáticos - Patos - PB'
     dominio = '@aluno.uepb.edu.br'

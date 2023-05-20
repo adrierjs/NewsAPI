@@ -1,8 +1,6 @@
-import json
 import os
-import time
 
-from scr.functions import advisor_API, convert_data
+from scr.functions.adivisor_api import advisor_API, convert_data
 from dotenv import load_dotenv
 
 load_dotenv() #Função para carregar as variáveis do arquivo .env
