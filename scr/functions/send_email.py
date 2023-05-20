@@ -1,5 +1,5 @@
 import yagmail
-import main
+from scr.main import *
 from dotenv import load_dotenv
 import os
 
@@ -19,7 +19,7 @@ emails = ['adrier.santos']
 # Cria o objeto yagmail e envia o e-mail
 
 for i in range (len(emails)):
-    dados = main.chamar_API()
+    dados = chamar_API()
     body = f'{dados}'
     subject = f'Dados climáticos - Patos - PB'
     dominio = '@aluno.uepb.edu.br'

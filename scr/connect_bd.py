@@ -1,12 +1,14 @@
 import os
 import psycopg2
+from dotenv import load_dotenv
 
+load_dotenv()
 MAINTENANCE_DATABASE = os.getenv('MAINTENANCE_DATABASE')
 USER_NAME = os.getenv('USER_NAME')
 PASSWORD_DATABASE = os.getenv('PASSWORD_DATABASE')
 
 
-print(PASSWORD_DATABASE)
+
 try:
     connection = psycopg2.connect(
         host="silly.db.elephantsql.com",
