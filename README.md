@@ -1,7 +1,7 @@
 # Dados climáticos
 ## Script para realizar a coleta de dados climáticos usando a API Advisor
 ### Tecnologias utilizadas:
-- Python 3.10.6 como linguagem principal
+- Python 3.10 como linguagem principal
 - A API Advisor disponibilizada gratuitamente pelo o Clima Tempo
 - Banco de dados: Apache Cassandra
 
