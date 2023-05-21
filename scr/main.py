@@ -2,9 +2,11 @@ import os
 
 from scr.functions.adivisor_api import advisor_API, convert_data
 from dotenv import load_dotenv
+from scr.functions.NewsAPI.integrationNewsAPI import topHeadlines
 
 load_dotenv() #Função para carregar as variáveis do arquivo .env
 TOKEN = os.getenv('TOKEN')
+APIKeyNewsAPI = os.getenv('APIKeyNewsAPI')
 paramts_city_id = {
     "name": "Patos",
     "state": "PB",
@@ -14,6 +16,11 @@ paramts = {
     "token": TOKEN
 }
 
+paramtsNewsAPI = {
+    "country": "br",
+    "apiKey" : APIKeyNewsAPI,
+    "category":"technology"
+}
 def chamar_API():
     data = advisor_API.fetch_city_id(paramts_city_id)
 
@@ -29,8 +36,10 @@ def chamar_API():
 # json_string = json.dumps(chamar_API(),ensure_ascii=False) #Colocar aspas duplas nos atributos do dicionario
 # print(json_string
 
-print(chamar_API())
+# print(chamar_API())
 
+result = topHeadlines(paramtsNewsAPI)
+# print(result)
 
 
 
