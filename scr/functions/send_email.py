@@ -8,11 +8,11 @@ from jinja2 import Environment, FileSystemLoader
 load_dotenv()
 PASSWORD = os.getenv('PASSWORD')
 # Configuração da conta de e-mail
-sender_email = 'dadosclimaticos.uepb@gmail.com'
-sender_password = PASSWORD
+# sender_email = 'dadosclimaticos.uepb@gmail.com'
+# sender_password = PASSWORD
 
-env = Environment(loader=FileSystemLoader('.'))
-template = env.get_template('template.html')
+# env = Environment(loader=FileSystemLoader('.'))
+# template = env.get_template('template.html')
 
 
 # Configuração do destinatário e mensagem
@@ -26,7 +26,7 @@ for i in range (len(emails)):
     nome = emails[i]
     #Funcao para adicionar varíaveis dinâmicas no html
     html_output = template.render(nome=nome, dados=dados)
-    body = html_output
+    body = dados
     subject = f'Dados climáticos - Patos - PB'
     dominio = '@aluno.uepb.edu.br'
     recipient = emails[i]+dominio
