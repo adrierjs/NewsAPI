@@ -1,4 +1,4 @@
-# Dados climáticos
+# Newslatter 
 ## Script para realizar o disparo de notícias via e-mail
 ### Tecnologias utilizadas:
 - Python 3.10 como linguagem principal
