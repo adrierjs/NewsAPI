@@ -1,8 +1,8 @@
 import os
-
 from scr.functions.adivisor_api import advisor_API, convert_data
 from dotenv import load_dotenv
-from scr.functions.NewsAPI.integrationNewsAPI import topHeadlines
+# from scr.functions.send_email import init
+
 
 load_dotenv() #Função para carregar as variáveis do arquivo .env
 TOKEN = os.getenv('TOKEN')
@@ -38,8 +38,13 @@ def chamar_API():
 
 # print(chamar_API())
 
-result = topHeadlines(paramtsNewsAPI)
 # print(result)
+#,'jennyfer.rocha','gabriel.lira','ronildo.lima','elder.andrare'
+
+
+
+
+
 
 
 

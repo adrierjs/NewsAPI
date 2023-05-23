@@ -1,4 +1,5 @@
 import requests
+from scr.main import paramtsNewsAPI
 def topHeadlines(params):
     urlTopHeadines = 'https://newsapi.org/v2/top-headlines'
     response = requests.get(urlTopHeadines, params=params)
@@ -8,3 +9,4 @@ def topHeadlines(params):
     else:
         raise Exception(requests.status_codes)
 
+newsGeneric = topHeadlines(paramtsNewsAPI)
