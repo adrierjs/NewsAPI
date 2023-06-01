@@ -7,8 +7,6 @@ MAINTENANCE_DATABASE = os.getenv('MAINTENANCE_DATABASE')
 USER_NAME = os.getenv('USER_NAME')
 PASSWORD_DATABASE = os.getenv('PASSWORD_DATABASE')
 
-
-
 try:
     connection = psycopg2.connect(
         host="silly.db.elephantsql.com",
@@ -21,5 +19,6 @@ try:
     print("Conexão estabelecida com sucesso!")
 except (Exception, psycopg2.Error) as error:
     print("Erro ao conectar ao PostgreSQL:", error)
+
 
 

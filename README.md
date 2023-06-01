@@ -1,9 +1,9 @@
-# Dados climáticos
-## Script para realizar a coleta de dados climáticos usando a API Advisor
+# Newsletter 
+## Script para realizar o disparo de notícias via e-mail
 ### Tecnologias utilizadas:
-- Python 3.10.6 como linguagem principal
-- A API Advisor disponibilizada gratuitamente pelo o Clima Tempo
-- Banco de dados: Apache Cassandra
+- Python 3.10 como linguagem principal
+- A API NewsAPI
+- Banco de dados: PostgreSQL
 
 #### Implementações futuras
 
@@ -15,4 +15,4 @@
 Para instalar todas as dependências, verifique se você tem o pip (`pip --version`) instalado em sua máquina. Se sim, só executar na pasta raiz do projeto `pip install -r requirements.txt`
  
 <br>
-<center> Desenvolvido por <strong>Adrier José</strong></center>
+

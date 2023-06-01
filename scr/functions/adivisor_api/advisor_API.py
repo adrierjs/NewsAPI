@@ -1,6 +1,5 @@
 import requests
 
-
 def fetch_city_id(params):
     url_city_id = 'http://apiadvisor.climatempo.com.br/api/v1/locale/city?name=&state=&token='
     response = requests.get(url_city_id, params=params)

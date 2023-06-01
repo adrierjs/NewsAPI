@@ -1,10 +1,12 @@
 import os
-
 from scr.functions.adivisor_api import advisor_API, convert_data
 from dotenv import load_dotenv
+# from scr.functions.send_email import init
+
 
 load_dotenv() #Função para carregar as variáveis do arquivo .env
 TOKEN = os.getenv('TOKEN')
+APIKeyNewsAPI = os.getenv('APIKeyNewsAPI')
 paramts_city_id = {
     "name": "Patos",
     "state": "PB",
@@ -14,6 +16,11 @@ paramts = {
     "token": TOKEN
 }
 
+paramtsNewsAPI = {
+    "country": "br",
+    "apiKey" : APIKeyNewsAPI,
+    "category":"technology"
+}
 def chamar_API():
     data = advisor_API.fetch_city_id(paramts_city_id)
 
@@ -30,6 +37,13 @@ def chamar_API():
 # print(json_string
 
 # print(chamar_API())
+
+# print(result)
+#,'jennyfer.rocha','gabriel.lira','ronildo.lima','elder.andrare'
+
+
+
+
 
 
 
