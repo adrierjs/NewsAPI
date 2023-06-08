@@ -1,6 +1,6 @@
 from scr.connect_bd import *
 
-cursor.execute('select * from tabela_usuarios')
+cursor.execute('SELECT * FROM "public"."app_django_news_registro"')
 result = cursor.fetchall()
 
 list_emails = []
