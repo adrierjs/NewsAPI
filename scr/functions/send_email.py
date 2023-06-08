@@ -23,4 +23,3 @@ sendEmailNews(listNews, list_emails,sender_email, sender_password)
 
 
 
-
