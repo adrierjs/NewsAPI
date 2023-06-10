@@ -6,3 +6,4 @@ result = cursor.fetchall()
 list_emails = []
 for row in result:
     list_emails.append(row[2])
+

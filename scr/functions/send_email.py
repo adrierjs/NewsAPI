@@ -29,9 +29,8 @@ sender_password = PASSWORD
 template = """<tr>
   <td>
     <h1>{title}</h1>
-    <h3><strong>Autor:</strong> {author}</h3>
+    <h4>Autor:<strong> {author}</strong></h4>
     <p>Para ler mais, acesse: <a href="{url}">Ler mais</a></p>
   </td>
 </tr>"""
-
 sendEmailNews(listNews, list_emails, sender_email, sender_password, template)

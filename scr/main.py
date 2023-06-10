@@ -7,7 +7,8 @@ APIKeyNewsAPI = os.getenv('APIKeyNewsAPI')
 paramtsNewsAPI = {
     "country": "br",
     "apiKey" : APIKeyNewsAPI,
-    "category":"technology"
+    "category":"technology",
+    "pageSize": 10
 }
 
 
