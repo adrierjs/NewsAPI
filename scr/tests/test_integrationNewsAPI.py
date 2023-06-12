@@ -15,7 +15,7 @@ def topHeadlines(params):
 
 class TestTopHeadlines(unittest.TestCase):
     def test_successful_request(self):
-        params = paramtsNewsAPI()
+        params = paramtsNewsAPI
         result = topHeadlines(params)
         self.assertIsNotNone(result)
         self.assertIn('articles', result)

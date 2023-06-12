@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock
-from scr.main import sendEmailNews
+from scr.main import *
 
 
 class TestSendEmailNews(unittest.TestCase):
