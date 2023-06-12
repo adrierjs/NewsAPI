@@ -10,4 +10,3 @@ def formatingNewsAPI(result):
     return lista_dicionarios
 
 listNews = formatingNewsAPI(newsGeneric)
-print(listNews)

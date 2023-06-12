@@ -1,6 +1,6 @@
 import requests
 import unittest
-from scr.main import paramtsNewsAPI
+from scr.autenticateNewsAPI import paramtsNewsAPI
 
 
 def topHeadlines(params):
