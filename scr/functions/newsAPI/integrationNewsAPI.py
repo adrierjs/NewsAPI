@@ -1,5 +1,5 @@
 import requests
-from scr.autenticateNewsAPI import paramtsNewsAPI
+from scr.functions.newsAPI.autenticateNewsAPI import paramtsNewsAPI
 def topHeadlines(params):
     urlTopHeadines = "https://newsapi.org/v2/top-headlines"
     response = requests.get(urlTopHeadines, params=params)

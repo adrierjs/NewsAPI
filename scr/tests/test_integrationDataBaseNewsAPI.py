@@ -1,10 +1,10 @@
 import unittest
 from unittest.mock import patch, MagicMock
-import scr.connect_bd as connect_bd
+from scr.database import connectDataBase
 
 class TestIntegrationBDNewsAPI(unittest.TestCase):
 
-    @patch('scr.connect_bd.psycopg2.connect')
+    @patch('scr.database.connectDataBase.psycopg2.connect')
     def test_fetch_emails(self, mock_connect):
         # Simula o resultado retornado pela consulta SQL
         mock_result = [
@@ -22,9 +22,9 @@ class TestIntegrationBDNewsAPI(unittest.TestCase):
 
         # Executa a consulta SQL
         mock_cursor.execute.return_value = None
-        connect_bd.cursor = mock_cursor  # Substitui o objeto cursor pelo objeto mock_cursor
-        connect_bd.cursor.execute('select * from app_django_news_registro')
-        result = connect_bd.cursor.fetchall()
+        connectDataBase.cursor = mock_cursor  # Substitui o objeto cursor pelo objeto mock_cursor
+        connectDataBase.cursor.execute('select * from app_django_news_registro')
+        result = connectDataBase.cursor.fetchall()
 
         # Verifica se o método .execute() foi chamado corretamente
         mock_cursor.execute.assert_called_once_with('select * from app_django_news_registro')
