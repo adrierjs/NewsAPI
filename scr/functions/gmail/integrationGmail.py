@@ -18,4 +18,3 @@ def sendEmailNews(listNews, emails, sender_email, sender_password, template):
     contents += "</table>"
     yag.send(to=emails, subject=subject, contents=contents)
     print("E-mail enviado para todos os destinatários")
-

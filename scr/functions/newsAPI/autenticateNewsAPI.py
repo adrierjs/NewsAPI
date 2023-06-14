@@ -1,10 +1,10 @@
 import os
 from dotenv import load_dotenv
-from datetime import date
+from datetime import date, timedelta
 
 load_dotenv() #Função para carregar as variáveis do arquivo .env
 APIKeyNewsAPI = os.getenv('APIKeyNewsAPI')
-date_actual = date.today()
+date_actual = date.today() - timedelta(hours=24)
 
 paramtsNewsAPI = {
     "apiKey" : APIKeyNewsAPI,
