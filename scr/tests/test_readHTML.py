@@ -4,12 +4,14 @@ from scr.functions.template.readHTML import read_html_file
 class TestReadHTMLFile(unittest.TestCase):
 
     def test_read_html_file(self):
-        file_path = '../functions/template/template.html'
+        file_path = 'scr/functions/template/template.html'
         expected_content = """<tr>
   <td>
     <h1>{title}</h1>
-    <h4>Autor:<strong> {author}</strong></h4>
-    <p>Para ler mais, acesse: <a href="{url}">Ler mais</a></p>
+    <p>{description}</p>
+    <p><strong>Fonte: </strong>{source_name}</p>
+    <p>Para ler mais, <strong>acesse: </strong> <a href="{url}">Ler mais</a></p>
+    <p><strong>Data de publição:</strong>{publishedAt}</p>
   </td>
 </tr>"""
 

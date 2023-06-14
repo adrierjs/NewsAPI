@@ -11,7 +11,8 @@ def sendEmailNews(listNews, emails, sender_email, sender_password, template):
     yag = yagmail.SMTP(sender_email, sender_password)
     contents = "<table>"
     for news in listNews:
-        formatted_news = template.format(title=news['title'], author=news['author'], url=news['url'])
+        formatted_news = template.format(title=news['title'],description=news['description'],source_name =news['source_name'], \
+            url=news['url'], publishedAt=news['publishedAt'])
         formatted_news = remove_extra_spaces(formatted_news)
         contents += formatted_news
     contents += "</table>"

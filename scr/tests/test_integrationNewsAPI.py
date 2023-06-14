@@ -4,7 +4,7 @@ from scr.functions.newsAPI.autenticateNewsAPI import paramtsNewsAPI
 
 
 def topHeadlines(params):
-    urlTopHeadlines = 'https://newsapi.org/v2/top-headlines'
+    urlTopHeadlines = 'https://newsapi.org/v2/everything'
     response = requests.get(urlTopHeadlines, params=params)
     if response.ok:
         data = response.json()

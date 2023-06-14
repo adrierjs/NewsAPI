@@ -1,4 +1,4 @@
-from scr.integrationGmail import sendEmailNews
+from scr.functions.gmail.integrationGmail import sendEmailNews
 from dotenv import load_dotenv
 from scr.functions.template.readHTML import read_html_file
 from functions.newsAPI.dataFormatingNews import listNews
