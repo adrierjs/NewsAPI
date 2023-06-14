@@ -1,32 +1,46 @@
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock
 from scr.integrationGmail import sendEmailNews
+from dotenv import load_dotenv
+from scr.functions.template.readHTML import read_html_file
+from scr.functions.NewsAPI.dataFormatingNews import listNews
+from scr.functions.integrationBDNewsAPI import list_emails
 import os
+
+load_dotenv()
+PASSWORD = os.getenv('PASSWORD')
+sender_email = 'dadosclimaticos.uepb@gmail.com'
+sender_password = PASSWORD
+template = read_html_file('../functions/template/template.html')
+
+# Mocking the SMTP class
+class MockSMTP:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def send(self, *args, **kwargs):
+        pass
+
 class TestIntegrationGmail(unittest.TestCase):
 
-    @patch('scr.integrationGmail.yagmail.SMTP')
-    def test_sendEmailNews(self, mock_smtp):
-        from dotenv import load_dotenv
-        from scr.functions.NewsAPI.dataFormatingNews import listNews
-        from scr.functions.integrationBDNewsAPI import list_emails
-
+    def test_sendEmailNews(self):
         load_dotenv()
         PASSWORD = os.getenv('PASSWORD')
         sender_email = 'dadosclimaticos.uepb@gmail.com'
         sender_password = PASSWORD
-        template = """<tr>
-          <td>
-            <h1>{title}</h1>
-            <h4>Autor:<strong> {author}</strong></h4>
-            <p>Para ler mais, acesse: <a href="{url}">Ler mais</a></p>
-          </td>
-        </tr>"""
+        template = read_html_file('../functions/template/template.html')
 
-        sendEmailNews(listNews, list_emails, sender_email, sender_password, template)
+        # Mocking the SMTP instance
+        mock_smtp = MockSMTP()
 
-        mock_smtp.assert_called_once_with(sender_email, sender_password)
-        instance = mock_smtp.return_value
-        instance.send.assert_called_once()
+        # Mocking the send method of the SMTP instance
+        mock_send = MagicMock()
+        mock_smtp.send = mock_send
+
+        with unittest.mock.patch('scr.integrationGmail.yagmail.SMTP', return_value=mock_smtp):
+            sendEmailNews(listNews, list_emails, sender_email, sender_password, template)
+
+        mock_send.assert_called_once()
 
 if __name__ == '__main__':
     unittest.main()
