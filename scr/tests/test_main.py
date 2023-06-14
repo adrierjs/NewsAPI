@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock
-from scr.integrationGmail import sendEmailNews
+from scr.functions.gmail.integrationGmail import sendEmailNews
 from dotenv import load_dotenv
 from scr.functions.template.readHTML import read_html_file
 from scr.functions.newsAPI.dataFormatingNews import listNews
@@ -37,7 +37,7 @@ class TestIntegrationGmail(unittest.TestCase):
         mock_send = MagicMock()
         mock_smtp.send = mock_send
 
-        with unittest.mock.patch('scr.integrationGmail.yagmail.SMTP', return_value=mock_smtp):
+        with unittest.mock.patch('scr.functions.gmail.integrationGmail.yagmail.SMTP', return_value=mock_smtp):
             sendEmailNews(listNews, list_emails, sender_email, sender_password, template)
 
         mock_send.assert_called_once()

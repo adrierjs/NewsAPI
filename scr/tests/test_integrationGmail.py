@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from scr.integrationGmail import sendEmailNews, remove_extra_spaces
+from scr.functions.gmail.integrationGmail import sendEmailNews, remove_extra_spaces
 
 class TestSendEmailNews(unittest.TestCase):
     def test_sendEmailNews(self):
