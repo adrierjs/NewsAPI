@@ -11,7 +11,7 @@ load_dotenv()
 PASSWORD = os.getenv('PASSWORD')
 sender_email = 'dadosclimaticos.uepb@gmail.com'
 sender_password = PASSWORD
-template = read_html_file('../functions/template/template.html')
+template = read_html_file('scr/functions/template/template.html')
 
 # Mocking the SMTP class
 class MockSMTP:
@@ -28,7 +28,7 @@ class TestIntegrationGmail(unittest.TestCase):
         PASSWORD = os.getenv('PASSWORD')
         sender_email = 'dadosclimaticos.uepb@gmail.com'
         sender_password = PASSWORD
-        template = read_html_file('../functions/template/template.html')
+        template = read_html_file('scr/functions/template/template.html')
 
         # Mocking the SMTP instance
         mock_smtp = MockSMTP()
