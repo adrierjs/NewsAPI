@@ -3,8 +3,8 @@ from unittest.mock import MagicMock
 from scr.integrationGmail import sendEmailNews
 from dotenv import load_dotenv
 from scr.functions.template.readHTML import read_html_file
-from scr.functions.NewsAPI.dataFormatingNews import listNews
-from scr.functions.integrationBDNewsAPI import list_emails
+from scr.functions.newsAPI.dataFormatingNews import listNews
+from scr.functions.newsAPI.integrationDataBaseNewsAPI import list_emails
 import os
 
 load_dotenv()

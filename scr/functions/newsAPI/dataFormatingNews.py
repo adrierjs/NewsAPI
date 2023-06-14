@@ -1,4 +1,4 @@
-from scr.functions.NewsAPI.integrationNewsAPI import newsGeneric
+from scr.functions.newsAPI.integrationNewsAPI import newsGeneric
 def formatingNewsAPI(result):
     lista_dicionarios = []
     for row in result['articles']:

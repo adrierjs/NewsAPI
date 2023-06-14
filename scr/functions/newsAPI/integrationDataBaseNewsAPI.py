@@ -1,4 +1,4 @@
-from scr.connect_bd import *
+from scr.database.connectDataBase import *
 
 cursor.execute('select * from app_django_news_registro')
 result = cursor.fetchall()
