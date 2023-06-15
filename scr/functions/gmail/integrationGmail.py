@@ -1,5 +1,6 @@
 import yagmail
 import re
+from datetime import date, timedelta
 
 def remove_extra_spaces(text):
     # Remove espaços extras e quebras de linha
@@ -7,7 +8,7 @@ def remove_extra_spaces(text):
     return text.strip()
 
 def sendEmailNews(listNews, emails, sender_email, sender_password, template):
-    subject = 'Newsletter Computing - UEPB'
+    subject = f'Daily News {date.today() - timedelta(hours=24)}'
     yag = yagmail.SMTP(sender_email, sender_password)
     contents = "<table>"
     for news in listNews:

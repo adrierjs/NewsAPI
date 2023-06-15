@@ -10,4 +10,6 @@ PASSWORD = os.getenv('PASSWORD')
 sender_email = 'dadosclimaticos.uepb@gmail.com'
 sender_password = PASSWORD
 template = read_html_file('functions/template/template.html')
+list_emails = ['adrierj@gmail.com']
 sendEmailNews(listNews, list_emails, sender_email, sender_password, template)
+
