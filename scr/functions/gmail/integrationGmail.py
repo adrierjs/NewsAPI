@@ -8,7 +8,7 @@ def remove_extra_spaces(text):
     return text.strip()
 
 def sendEmailNews(listNews, emails, sender_email, sender_password, template):
-    subject = f'Daily News {date.today() - timedelta(hours=24)}'
+    subject = f'Daily News {date.today()'
     yag = yagmail.SMTP(sender_email, sender_password)
     contents = "<table>"
     for news in listNews:
